@@ -9,12 +9,22 @@
 
 
     <script>
-        function exibeAlgo() {
-            console.log('Hello World')
+        var text;
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        function exibeEncereco(endereco) {
+            var texto = "O usuario mora em " + endereco.cidade + " / " + endereco.uf + " no bairro " + endereco.bairro + ", na rua " + endereco.rua + " com n " + endereco.numero;
+            return texto;
         }
 
-        // setInterval(exibeAlgo, 1000);
-        setTimeout(exibeAlgo, 5000);
+        text = exibeEncereco(endereco);
+        console.log(text);
     </script>
 </body>
 
