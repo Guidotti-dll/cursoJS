@@ -9,25 +9,17 @@
 <body>
 
     <div id="app">
-        <input id="nome" />
+        <div class="box">a</div>
 
     </div>
 
 
     <script>
-        var linkElement = document.createElement('a');
+        var boxElement = document.querySelector('.box');
 
-        linkElement.setAttribute('href', 'http://rocketseat.com.br');
-
-        var textElement = document.createTextNode('Acessar site rocketseat');
-
-        linkElement.appendChild(textElement);
-
-        var containerElement = document.querySelector('#app');
-        containerElement.appendChild(linkElement);
-
-        var inputElement = document.querySelector('#nome');
-        containerElement.removeChild(inputElement);
+        boxElement.style.width = 500;
+        boxElement.style.height = 500;
+        boxElement.style.backgroundColor = '#f00';
     </script>
 </body>
 
