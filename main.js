@@ -1,24 +1,4 @@
-var minhaPromisse = function() {
-    return new Promise(function(resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://api.github.com/users/guidotti-dll');
-        xhr.send(null);
-
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    resolve(JSON.parse(xhr.responseText));
-                } else {
-                    reject('Erro na requisição');
-                }
-
-
-            }
-        }
-    });
-}
-
-minhaPromisse()
+axios.get('http://api.github.com/users/guidotti-dll')
     .then(function(response) {
         console.log(response);
     })
