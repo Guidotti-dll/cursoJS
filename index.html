@@ -9,14 +9,20 @@
 <body>
 
     <div id="app">
-        <button onmouseover="mostraAlerta()"> Me pressione</button>
-        <input onkeypress="mostraAlerta()" />
+
+        <input type="text" name="nome" />
+        <button class="botao">Adicionar</button>
     </div>
 
 
     <script>
-        function mostraAlerta() {
-            alert('Botão foi clicado');
+        var inputElement = document.querySelector('input[name=nome]');
+        var btnElemet = document.querySelector('button.botao');
+
+        btnElemet.onclick = function() {
+            var text = inputElement.value;
+
+            alert(text);
         }
     </script>
 </body>
