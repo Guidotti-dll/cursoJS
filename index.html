@@ -2,30 +2,22 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Curso Javascript</title>
 </head>
 
 <body>
 
+    <div id="app">
+        <button onmouseover="mostraAlerta()">Me pressione</button>
+        <input onkeypress="mostraAlerta()" />
+    </div>
+
 
     <script>
-        var usuarios = [{
-            nome: "Diego",
-            habilidades: ["Javascript", "ReactJS", "Redux"]
-        }, {
-            nome: "Gabriel",
-            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
-        }];
-
-
-
-        function mostrarTexto(users) {
-            for (var habilits of users) {
-                console.log('O ' + habilits.nome + ' possui as habilidades: ' + habilits.habilidades.join());
-            }
+        function mostraAlerta() {
+            alert('Botão foi clicado');
         }
-
-        var teste = mostrarTexto(usuarios);
     </script>
 </body>
 
