@@ -1,9 +1,27 @@
-var xhr = new XMLHttpRequest();
+var minhaPromisse = function() {
+    return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://api.github.com/users/guidotti-dll');
+        xhr.send(null);
 
-xhr.open('GET', 'http://api.github.com/users/guidotti-dll');
-xhr.send(null);
-xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-        console.log(JSON.parse(xhr.responseText));
-    }
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                } else {
+                    reject('Erro na requisição');
+                }
+
+
+            }
+        }
+    });
 }
+
+minhaPromisse()
+    .then(function(response) {
+        console.log(response);
+    })
+    .catch(function(error) {
+        console.warn(error);
+    });
